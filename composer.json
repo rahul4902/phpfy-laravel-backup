@@ -1,0 +1,66 @@
+{
+  "name": "phpfy/laravel-backup",
+  "description": "A comprehensive Laravel backup package with support for multiple databases and file backups",
+  "keywords": [
+    "laravel",
+    "backup",
+    "database",
+    "mysql",
+    "postgresql",
+    "sqlite",
+    "sql-server",
+    "files",
+    "encryption"
+  ],
+  "homepage": "https://github.com/yourusername/laravel-backup",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Rahul Singh",
+      "email": "rahulsingh4902@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^8.1",
+    "illuminate/support": "^9.0|^10.0|^11.0|^12.0",
+    "illuminate/console": "^9.0|^10.0|^11.0|^12.0",
+    "illuminate/filesystem": "^9.0|^10.0|^11.0|^12.0",
+    "symfony/process": "^6.0|^7.0",
+    "league/flysystem": "^3.0"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^7.0|^8.0|^9.0",
+    "phpunit/phpunit": "^9.5|^10.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Phpfy\\LaravelBackup\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Phpfy\\LaravelBackup\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit",
+    "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Phpfy\\LaravelBackup\\LaravelBackupServiceProvider"
+      ],
+      "aliases": {
+        "Backup": "Phpfy\\LaravelBackup\\Facades\\Backup"
+      }
+    }
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
+}
